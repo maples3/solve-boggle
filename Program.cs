@@ -1,6 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-
-
-var board = new BoggleBoard("abcdqwerpoiuhjkl");
+﻿
+var board = BoardGenerator.generateRandomBoard();
 Console.WriteLine(board.getPrintable());
