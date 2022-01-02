@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 /**
  * A Boggle board is a unique arrangement of the sixteen dice in a 4x4 grid.
@@ -21,5 +22,22 @@ public class BoggleBoard {
             boardArray[x,y] = boardString[i];
         }
         _board = boardArray;
+    }
+
+    public string getPrintable() {
+        var sb = new StringBuilder();
+        for (int y = 0; y < 4; y++) {
+            for(int x = 0; x < 4; x++) {
+                var ch = _board[x,y];
+                if (ch == 'q') {
+                    sb.Append("Qu ");
+                } else {
+                    sb.Append(ch.ToString().ToUpper());
+                    sb.Append("  ");
+                }
+            }
+            sb.AppendLine();
+        }
+        return sb.ToString();
     }
 }
